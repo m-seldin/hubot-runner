@@ -29,7 +29,7 @@ if(ops.dev){
 }
 
 
-let hubotDir = ops.hdir ? ops.hdir : __dirname;
+let hubotDir = ops.hdir ? ops.hdir : process.cwd();
 logger.debug(`Current working dir : ${hubotDir}`);
 let hubotRunner = new HubotRunner(hubotDir,ops,"c:\\Work\\Slack\\hubot\\hubot_apppulsemobile-e\\configs\\envVars.json");
 
