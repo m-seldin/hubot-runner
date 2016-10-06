@@ -16,26 +16,33 @@
 'use strict';
 const Helpers = require('../lib/helpers.js');
 const HubotRunner = require('../lib/hubot-runner.js');
+const DEFAULT_CONFIG_FILE_NAME  ='envVars.json';
+
 let stdio = require('stdio');
 let ops = stdio.getopt({
     'dev': {key: 'd', description: 'Dont respawn process cause we are in dev mode'},
     'install': {key: 'i', description: 'Run npm before launching hubot'},
     'hdir':{key:'h',args:1, description: 'Hubot directory'},
-    'loglevel':{args:1, description: 'The logger level'}
-
+    'loglevel':{args:1, description: 'The logger level'},
+    'config':{args:1,description:'Environment variables config file'}
 });
 
 if(ops.dev){
 	logger.info('dev mode activated!');
 }
+
 if(ops.loglevel){
     logger.setLevel(ops.loglevel);
 }
 
 
 let hubotDir = ops.hdir ? ops.hdir : process.cwd();
+let configFile = ops.config ? ops.config : Path.join(process.cwd(),"configs",DEFAULT_CONFIG_FILE_NAME);
+
 logger.debug(`Current working dir : ${hubotDir}`);
-let hubotRunner = new HubotRunner(hubotDir,ops,"c:\\Work\\Slack\\hubot\\hubot_apppulsemobile-e\\configs\\envVars.json");
+logger.info(`Environment vars configuration file : ${configFile}`);
+
+let hubotRunner = new HubotRunner(hubotDir,ops,configFile);
 
 hubotRunner.runHubot();
 

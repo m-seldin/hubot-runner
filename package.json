@@ -5,7 +5,7 @@
   "keywords": [
     "github","tool","hubot","script", "manager","keepalive","deamon"
   ],
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Run hubot and keep it alive in case of error",
   "repository": {
     "type": "git",
