@@ -5,7 +5,7 @@
   "keywords": [
     "github","tool","hubot","script", "manager","keepalive","deamon"
   ],
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Run hubot and keep it alive in case of error",
   "repository": {
     "type": "git",
@@ -16,7 +16,6 @@
     "start":"node ./bin/hubot-runner",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Michael Seldin",
   "license": "ISC",
   "bin":{
     "hubot-runner":"./bin/hubot-runner",
@@ -32,9 +31,6 @@
   "devDependencies": {
     "jasmine-node": "1.14.5",
     "jshint": "2.9.2"
-  },
-  "scripts": {
-    "test": "jasmine-node --matchall tests/"
   },
   "readmeFilename": "README.md"
 }

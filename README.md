@@ -8,8 +8,13 @@ To install the most recent release from npm, run:
 
 ## 2. Usage
 
+### Args
+    -d, --dev             (optional) Dont respawn process if exists (in case we are in dev mode)
+    -i, --install         (optional) Run npm install before launching hubot
+    -h, --hdir <ARG1>     (optional) Hubot working directory , if not specified will be taken from current dir
 
 Once you have installed the module globaly you will have 2 optional commands for running the module:
+
  * hubot-runner [arguments]
 
 Or
