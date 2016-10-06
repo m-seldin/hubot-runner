@@ -20,12 +20,16 @@ let stdio = require('stdio');
 let ops = stdio.getopt({
     'dev': {key: 'd', description: 'Dont respawn process cause we are in dev mode'},
     'install': {key: 'i', description: 'Run npm before launching hubot'},
-    'hdir':{key:'h',args:1, description: 'Hubot directory'}
+    'hdir':{key:'h',args:1, description: 'Hubot directory'},
+    'loglevel':{args:1, description: 'The logger level'}
 
 });
 
 if(ops.dev){
-	console.log('dev mode activated!');
+	logger.info('dev mode activated!');
+}
+if(ops.loglevel){
+    logger.setLevel(ops.loglevel);
 }
 
 
