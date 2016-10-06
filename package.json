@@ -1,0 +1,40 @@
+{
+  "name": "hubot-runner",
+  "author": "Michael Seldin",
+  "homepage": "https://github.com/m-seldin/hubot-runner",
+  "keywords": [
+    "github","tool","hubot","script", "manager","keepalive","deamon"
+  ],
+  "version": "0.0.1",
+  "description": "Run hubot and keep it alive in case of error",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/m-seldin/hubot-runner.git"
+  },
+  "main": "./lib/hubot-runner",
+  "scripts": {
+    "start":"node ./bin/hubot-runner",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Michael Seldin",
+  "license": "ISC",
+  "bin":{
+    "hubot-runner":"./bin/hubot-runner",
+    "hr":"./bin/hubot-runner"
+  },
+  "dependencies": {
+    "readline-sync":"^1.4.2",
+    "stdio":"^0.2.7",
+    "log4js":"^0.6.37",
+    "adm-zip":"^0.4.7",
+    "tmp":"^0.0.28"
+  },
+  "devDependencies": {
+    "jasmine-node": "1.14.5",
+    "jshint": "2.9.2"
+  },
+  "scripts": {
+    "test": "jasmine-node --matchall tests/"
+  },
+  "readmeFilename": "README.md"
+}
